@@ -4,9 +4,14 @@ module Rubyshoes
     has_and_belongs_to_many :stores
     validates :name, uniqueness: true, presence: true, length: { maximum: 100 }
     before_save(:capitalize_name)
+    after_find(:price_to_s)
 
     def capitalize_name
       name.capitalize unless name.nil?
+    end
+
+    def price_to_s
+      '$' + price.to_s unless price.nil?
     end
   end
 end
