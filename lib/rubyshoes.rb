@@ -1,9 +1,8 @@
 require 'rubyshoes/version'
-
+require 'rubyshoes/brand'
+require 'rubyshoes/store'
 # Namespace module for Rubyshoes classes
-module Rubyshoes
-  # Your code goes here...
-end
+module Rubyshoes; end
 
 # Adds a method to the Hash class.
 #
