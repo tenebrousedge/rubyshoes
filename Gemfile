@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
+gem 'activemodel'
 gem 'haml'
 gem 'pg'
 gem 'pry'
@@ -18,6 +19,7 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'shoulda-callback-matchers'
   gem 'shoulda-matchers'
   gem 'timecop'
 end

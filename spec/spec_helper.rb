@@ -1,8 +1,9 @@
 require 'bundler/setup'
+require_relative '../boot.rb'
 require 'shoulda-matchers'
+require 'shoulda-callback-matchers'
 require 'capybara'
 require 'timecop'
-require_relative '../boot'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
