@@ -1,7 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'sinatra-flash'
-require 'rubyshoes'
+require 'sinatra/flash'
+require 'sinatra/rest'
+require_relative './lib/rubyshoes'
+require_relative './routes/brands'
+require_relative './routes/stores'
 
 if development?
   require 'sinatra/reloader'
@@ -18,8 +21,8 @@ class RubyshoesApp < Sinatra::Application
 
   enable :sessions
 
-  rest Rubyshoes::Brand, renderer: :haml
-  rest Rubyshoes::Store, renderer: :haml
+  register Sinatra::Rshoes::Routing::Store
+  register Sinatra::Rshoes::Routing::Store
 
   run! if app_file == $PROGRAM_NAME
 end
