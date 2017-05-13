@@ -22,6 +22,6 @@ module RubyshoesHelper
 end
 
 RSpec.configure do |c|
-  c.include Capybara
+  c.include Capybara::DSL
   c.include RubyshoesHelper, type: :feature
 end

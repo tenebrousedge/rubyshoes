@@ -1,0 +1,7 @@
+%ul
+  - @brands.each do |b|
+    %li
+      - binding.pry
+      %a{ href: '/brands/' + b.id.to_s }
+        =b.name
+      =b.price.to_s.rjust(8)

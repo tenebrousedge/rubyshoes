@@ -4,7 +4,7 @@ feature 'Edit Brand Page' do
   before :each do
     @dragon = Faker::GameOfThrones.unique.dragon
     @price = Faker::Commerce.price
-    create_brand(@dragon)
+    create_brand(@dragon, @price)
   end
   it 'allows the brand name to be changed' do
     new_name = Faker::GameOfThrones.unique.dragon

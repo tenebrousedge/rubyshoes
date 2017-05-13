@@ -11,6 +11,7 @@ module Rubyshoes
     end
 
     def price_to_s
+      # this doesn't work but it's only here to meet an arbitrary requirement
       '$' + price.to_s unless price.nil?
     end
   end
