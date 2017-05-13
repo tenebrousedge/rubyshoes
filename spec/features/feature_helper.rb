@@ -2,6 +2,7 @@ require_relative '../spec_helper'
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/rspec'
+require 'faker'
 
 Capybara.app = RubyshoesApp
 

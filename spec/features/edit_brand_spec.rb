@@ -3,6 +3,7 @@ require_relative 'feature_helper'
 feature 'Edit Brand Page' do
   before :each do
     @dragon = Faker::GameOfThrones.unique.dragon
+    @price = Faker::Commerce.price
     create_brand(@dragon)
   end
   it 'allows the brand name to be changed' do
