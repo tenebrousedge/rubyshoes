@@ -22,16 +22,17 @@ class RubyshoesApp
     post '/' do
       new_store = params.fetch(:store)
       s = M.create(new_store)
-      s.brands << params.fetch(:brand)
+      s.brands << Rubyshoes::Brand.find(params.dig(:brand, :id))
       @stores = M.all
       haml :stores
     end
 
     patch '/:id' do |id|
       new_data = params.fetch(:store)
-      @store = M.find(id).update(new_data)
-      @store.brands << params.fetch(:brand)
-      redirect_back
+      @store = M.find(id)
+      @store.update(new_data)
+      @store.brands << Rubyshoes::Brand.find(params.dig(:brand, :id))
+      redirect back
     end
 
     delete '/:id' do |id|

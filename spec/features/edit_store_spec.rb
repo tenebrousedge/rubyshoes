@@ -7,7 +7,7 @@ feature 'Edit Store Page' do
   end
   it 'allows the store name to be changed' do
     new_name = Faker::GameOfThrones.unique.house
-    visit '/stores'
+    visit '/'
     first('.store').click @house
     fill_in 'store[name]', with: new_name
     click 'Edit Store'

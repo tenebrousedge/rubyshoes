@@ -1,5 +1,5 @@
 %ul
   - @stores.each do |s|
-    %li
+    %li.store
       %a{ href: '/stores/' + s.id.to_s }
         =s.name

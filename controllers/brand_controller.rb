@@ -3,7 +3,6 @@ class RubyshoesApp
   class BrandController
     M = Rubyshoes::Brand
 
-
     get '/new' do
       haml :new_brand
     end

@@ -21,9 +21,9 @@ class RubyshoesApp < Sinatra::Base
   enable :method_override
 
   enable :sessions
-    configure :production, :development do
-      enable :logging
-    end
+  configure :production, :development do
+    enable :logging
+  end
 
   class AppController < RubyshoesApp
   end

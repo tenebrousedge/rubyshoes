@@ -1,5 +1,5 @@
-$:.unshift __dir__ + '/lib'
-$:.unshift __dir__ + '/controllers'
+$LOAD_PATH.unshift __dir__ + '/lib'
+$LOAD_PATH.unshift __dir__ + '/controllers'
 require_relative './boot'
 
 map('/') { run RubyshoesApp::AppController }

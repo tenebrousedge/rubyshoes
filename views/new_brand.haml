@@ -1,6 +1,8 @@
-%form.new-brand{ action: '/brands', method: 'post'}
-  %label{ for: 'brand[name]'} Brand Name
-  %input{ type: 'text', name: 'brand[name]' }
-  %label{ for: 'brand[price]'} Price
-  %input{ type: 'number', min: '0.00', step: '0.01', name: 'brand[price]' }
+%form#new-brand{ action: '/brands', method: 'post'}
+  .form-group
+    %label{ for: 'brand[name]'} Brand Name
+    %input#name{ type: 'text', name: 'brand[name]' }
+  .form-group
+    %label{ for: 'brand[price]'} Price
+    %input{ type: 'number', min: '0.00', step: '0.01', name: 'brand[price]' }
   %button.btn.btn-default{ type: 'submit' } Create Brand

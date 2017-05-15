@@ -5,7 +5,7 @@
     %p
       Price:
       =@brand.price.to_s.rjust(8)
-%form.edit{ action: '/brands/' + @brand.id.to_s, method: 'post'}
+%form.edit{ action: '/brands/' + @brand.id.to_s, method: 'post' }
   %input{ type: 'hidden', name: '_method', value: 'patch' }
   .form-group
     %label{ for: 'brand[name]' } Brand Name
@@ -13,7 +13,7 @@
   .form-group
     %label{ for: 'brand[price]'} Price
     %input.form-control{ type: 'number', min: '0.00', step: '0.01', name: 'brand[price]' }
-  %button{ type: 'submit' } Edit Brand
+  %button.btn.btn-default{ type: 'submit' } Edit Brand
 %form.delete{ action: '/brands/' + @brand.id.to_s, method: 'post' }
   %input{ type: 'hidden', name: '_method', value: 'delete' }
-  %button{ type: 'submit' } Delete Brand
+  %button.btn.btn-default{ type: 'submit' } Delete Brand

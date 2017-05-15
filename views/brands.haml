@@ -1,6 +1,6 @@
 %ul
   - @brands.each do |b|
-    %li
+    %li.brand
       - binding.pry
       %a{ href: '/brands/' + b.id.to_s }
         =b.name

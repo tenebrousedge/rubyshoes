@@ -1,0 +1,27 @@
+.panel.panel-default
+  .panel-heading
+    =@store.name
+  .panel-body
+    %h3 Brands
+    %ul
+      - @store.brands.each do |b|
+        %li
+          %a{ href: '/brands/' + b.id.to_s }
+            = b.name
+%form.edit{ action: '/stores/' + @store.id.to_s, method: 'post' }
+  %input{ type: 'hidden', name: '_method', value: 'patch' }
+  .form-group
+    %label{ for: 'store[name]' } Store Name
+    %input.form-control{ type: 'text', maxlength: 100, name: 'store[name]' }
+  .form-group
+    - @brands.each do |b|
+      %label.custom-control.custom-checkbox
+        %input.custom-control-input{ type: 'checkbox', name: 'brand[id][]', value: b.id }
+        %span.custom-control.indicator
+        %span.custom-control-description
+          = b.name
+  %button.btn.btn-default{ type: 'submit' } Edit Store
+
+%form.delete{ action: '/stores/' + @store.id.to_s, method: 'post' }
+  %input{ type: 'hidden', name: '_method', value: 'delete' }
+    %button.btn.btn-default{ type: 'submit' } Delete Store

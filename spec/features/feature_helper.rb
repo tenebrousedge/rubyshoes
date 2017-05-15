@@ -4,8 +4,6 @@ require 'capybara/dsl'
 require 'capybara/rspec'
 require 'faker'
 
-Capybara.app = RubyshoesApp
-
 module RubyshoesHelper
   def create_store(name)
     visit '/stores/new'

@@ -1,6 +1,12 @@
 %form.new-store{ action: '/stores', method: 'post'}
-  %label{ for: 'store[name]'} Store Name
-  %input{ type: 'text', name: 'store[name]' }
-  - @brands.each do |b|
-    %input{ type: 'checkbox', name: 'brand[][id]', value: b.id } b.name
+  .form-group
+    %label{ for: 'store[name]'} Store Name
+    %input{ type: 'text', name: 'store[name]', maxlength: '100' }
+  .form-group
+    - @brands.each do |b|
+      %label.custom-control.custom-checkbox
+        %input.custom-control-input{ type: 'checkbox', name: 'brand[id][]', value: b.id }
+        %span.custom-control.indicator
+        %span.custom-control-description
+          = b.name
   %button.btn.btn-default{ type: 'submit' } Create Store
